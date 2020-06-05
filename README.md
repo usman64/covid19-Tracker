@@ -3,6 +3,8 @@
 ## About
 Covid Tracker is a web app imparting latest & live updates related to the coronavirus pandemic globally. Developed with React and fully optimized for a responsive mobile view.
 
+Website: http://covid19-tracker-usman.surge.sh/
+
 ## Languages/Libraries used
   - ReactJS
   - Redux
