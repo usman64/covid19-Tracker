@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+// import { combineReducers } from 'redux';
 import { statsReducer } from './stats/stats.reducer';
 
 const rootReducer = statsReducer;

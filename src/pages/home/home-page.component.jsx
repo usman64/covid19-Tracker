@@ -2,7 +2,7 @@ import React from 'react';
 import ImageSlider from '../../components/image-slider/image-slider.component';
 import { Link } from 'react-router-dom';
 
-import { Button, Paper } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 
 import './home-page.styles.scss';
 

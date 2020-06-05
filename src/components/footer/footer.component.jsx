@@ -61,13 +61,12 @@ const DeveloperContact = () => (
       <a href='mailto:usmantariq65@outlook.com'> usmantariq65@outlook.com </a>
     </address>
     <div className='contact-icons'>
-      <a className='icon' href='https://github.com/usman64' target='_blank'>
+      <a className='icon' href='https://github.com/usman64'>
         <GitHubIcon />
       </a>
       <a
         className='icon'
         href='https://www.linkedin.com/in/muhammad-usman-tariq-454579a4/'
-        target='_blank'
       >
         <LinkedInIcon />
       </a>
