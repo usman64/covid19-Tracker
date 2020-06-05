@@ -1,3 +1,27 @@
+# Bootcamp Project 1: Covid-19 Tracker
+
+## About
+Covid Tracker is a web app imparting latest & live updates related to the coronavirus pandemic globally. Developed with React and fully optimized for a responsive mobile view.
+
+## Languages/Libraries used
+  - ReactJS
+  - Redux
+  - React-Redux
+  - Reselect
+  - Node Sass
+  - Material UI
+  - React-router-dom
+  - React-hamburger-menu
+  - React-Slideshow-image
+
+
+///////////////////////////////////////////////////////////////////
+
+AUTOMATED MESSAGE BELOW
+
+//////////////////////////////////////////////////////////////////
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
