@@ -8,10 +8,14 @@ import store from './redux/store';
 
 import { BrowserRouter } from 'react-router-dom';
 
+import ScrollToTop from './components/scroll-to-top/scroll-to-top.component';
+
 ReactDOM.render(
   // <Provider store={store}>
   <BrowserRouter>
-    <App />
+    <ScrollToTop>
+      <App />
+    </ScrollToTop>
   </BrowserRouter>,
   // </Provider>
   document.getElementById('root')

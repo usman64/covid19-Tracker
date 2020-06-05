@@ -37,6 +37,9 @@ const QuickLinks = () => (
     <Link className='option' to='/stats'>
       Stats
     </Link>
+    <Link className='option' to='/what-is-covid'>
+      What is Covid?
+    </Link>
     <Link className='option' to='/news'>
       News
     </Link>
