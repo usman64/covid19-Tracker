@@ -1,0 +1,13 @@
+.alert-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #3b7d72;
+
+  .message {
+    color: white;
+    font-weight: bold;
+  }
+}
