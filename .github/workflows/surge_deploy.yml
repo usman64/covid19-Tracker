@@ -25,11 +25,13 @@ jobs:
     - name: Install NodeJs
       uses: actions/setup-node@v2-beta
       with:
-        node-version: 12
-    - name: Install node modules
-      run: npm install
+        node-version: 10.20.1
+    - name: Run Yarn install through a github action
+      uses: borales/actions-yarn@v2.0.0
+      with:
+        cmd: install
     - name: Make Build folder
-      run: npm run build
+      run: yarn build
     - name: Install surge
       run: npm install -g surge
     - name: deploy website
