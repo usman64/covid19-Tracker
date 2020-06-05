@@ -31,7 +31,7 @@ jobs:
       with:
         cmd: install
     - name: Install sass
-      run: npm install node-sass
+      run: npx install node-sass
     - name: Make Build folder
       run: yarn build
     - name: Install surge
