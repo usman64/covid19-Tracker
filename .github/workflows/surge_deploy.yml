@@ -31,7 +31,7 @@ jobs:
       with:
         cmd: install
     - name: Rebuild node-sass
-      run: npm rebuild node-sass
+      run: sudo npm rebuild node-sass
     - name: Make Build folder
       run: yarn build
     - name: Install surge
