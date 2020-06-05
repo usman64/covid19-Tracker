@@ -29,7 +29,7 @@ jobs:
     - name: Install node modules
       run: npm install
     - name: Make Build folder
-      run: npm build
+      run: npm run build
     - name: Install surge
       run: npm install -g surge
     - name: deploy website
