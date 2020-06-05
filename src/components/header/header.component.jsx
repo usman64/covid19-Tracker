@@ -40,6 +40,9 @@ class Header extends React.Component {
           <Link className='option' to='/stats'>
             STATS
           </Link>
+          <Link className='option' to='/what-is-covid'>
+            WHAT IS COVID?
+          </Link>
           <Link className='option' to='/news'>
             NEWS
           </Link>

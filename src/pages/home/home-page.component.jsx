@@ -1,45 +1,66 @@
 import React from 'react';
-import { Slide, Fade } from 'react-slideshow-image';
+import ImageSlider from '../../components/image-slider/image-slider.component';
+import { Link } from 'react-router-dom';
+
+import { Button, Paper } from '@material-ui/core';
 
 import './home-page.styles.scss';
-
-const slideImages = [
-  //   'viktor-forgacs-FcDqdJUM6B4-unsplash.jpg',
-  'markus-spiske-11bjTWQ9mV0-unsplash.jpg',
-  'corona1.jpg',
-  'sarah-kilian-yvxw4K9lYKo-unsplash.jpg',
-];
-
-const properties = {
-  duration: 5000,
-  transitionDuration: 500,
-  infinite: true,
-  indicators: true,
-  arrows: true,
-  pauseOnHover: false,
-  onChange: (oldIndex, newIndex) => {
-    console.log(`slide transition from ${oldIndex} to ${newIndex}`);
-  },
-};
 
 const HomePage = () => {
   return (
     <div className='homepage'>
-      <div className='slider'>
-        <Fade {...properties}>
-          {slideImages.map((imgpath, key) => (
-            <div className='each-slide'>
-              <img src={require(`../../assets/${imgpath}`)} alt='covid' />
-              {/* <div
+      <ImageSlider />
+      <div className='section'>
+        <div className='section-heading'>
+          <Link className='heading' to='/stats'>
+            LATEST GLOBAL UPDATES
+          </Link>
+        </div>
+        <div className='section-content'>
+          <div className='highlight-card'></div>
+          <div className='supporting-card'></div>
+          <div className='supporting-card'></div>
+        </div>
+        <div className='section-action'>
+          <Link className='heading' to='/stats'>
+            <Button
+              variant='contained'
               style={{
-                backgroundImage: 'url(../../assets/corona-1.jpg)',
-                height: '100%',
+                fontSize: '18px',
+                backgroundColor: 'black',
+                color: 'white',
+                // borderRadius: '20px',
+                padding: '10px 50px',
               }}
-            > */}
-              {/* </div> */}
-            </div>
-          ))}
-        </Fade>
+            >
+              View More
+            </Button>
+          </Link>
+        </div>
+      </div>
+      <div className='section'>
+        <div className='section-heading'>
+          <Link className='heading' to='/what-is-covid'>
+            COVID SYMPTOMS
+          </Link>
+        </div>
+        <div className='section-content'></div>
+        <div className='section-action'>
+          <Link className='heading' to='/what-is-covid'>
+            <Button
+              variant='contained'
+              style={{
+                fontSize: '18px',
+                backgroundColor: 'black',
+                color: 'white',
+                // borderRadius: '20px',
+                padding: '10px 50px',
+              }}
+            >
+              View More
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );

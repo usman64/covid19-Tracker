@@ -1,11 +1,11 @@
-.homepage {
+.what-is-covid {
   display: flex;
   flex-direction: column;
 
   .section {
     display: flex;
     flex-direction: column;
-    margin: 20px 50px;
+    margin: 0px 50px;
 
     .section-heading {
       display: flex;
@@ -13,24 +13,16 @@
       justify-content: space-between;
       font-size: 30px;
       font-weight: bolder;
-      padding: 30px;
-
-      a {
-        text-decoration: none;
-        color: black;
-      }
-
-      .heading {
-        cursor: pointer;
-
-        &:hover {
-          color: #3b7d72;
-        }
-      }
+      padding: 20px 20px 10px 20px;
+      color: black;
     }
 
     .section-content {
       margin: 10px 30px;
+
+      .text {
+        text-align: justify;
+      }
     }
 
     .section-action {

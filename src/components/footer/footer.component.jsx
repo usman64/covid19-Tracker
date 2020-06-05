@@ -45,9 +45,9 @@ const QuickLinks = () => (
 
 const About = () => (
   <div className='about'>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-    exercitationem, dolores libero quidem, beatae iste, sed consequuntur ex esse
-    optio provident accusantium. Placeat aut sunt magnam eius totam ut quas!
+    Covid Tracker is a web app imparting latest global updates related to the
+    coronavirus pandemic. Developed with React and fully optimized for mobile
+    view.
   </div>
 );
 

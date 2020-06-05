@@ -59,6 +59,10 @@
         margin: 3px 0px;
         font-size: 15px;
 
+        &:hover {
+          color: gray;
+        }
+
         @media (max-width: 590px) {
           font-size: 20px;
         }
