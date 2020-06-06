@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './App.css';
-import AlertHeader from './components/alert-header/alert-header.component';
+// import AlertHeader from './components/alert-header/alert-header.component';
 import Header from './components/header/header.component';
 import { Switch, Route } from 'react-router-dom';
 import Footer from './components/footer/footer.component';
