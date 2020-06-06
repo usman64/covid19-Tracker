@@ -26,8 +26,8 @@ jobs:
       uses: actions/setup-node@v2-beta
       with:
         node-version: 12
-    - name: npm install -f
-      run: npm install -f
+    - name: npm install
+      run: npm install
     - name: Make Build folder
       run: npm run build --prod
     - name: Install surge
