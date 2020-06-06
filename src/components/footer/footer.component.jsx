@@ -24,7 +24,19 @@ const Footer = () => {
           <DeveloperContact />
         </div>
       </div>
-      <div className='cp-signature'>&#9400; All Copyrights Reserved</div>
+      <div className='cp-signature'>
+        {/* <span>
+          {' '}
+          <a target='_blank' href='https://icons8.com/icons/set/coronavirus'>
+            Coronavirus icon
+          </a>
+          icon by
+          <a target='_blank' href='https://icons8.com'>
+            Icons8
+          </a>
+        </span> */}
+        <span>&#9400; OPENSOURCE PROJECT</span>
+      </div>
     </div>
   );
 };

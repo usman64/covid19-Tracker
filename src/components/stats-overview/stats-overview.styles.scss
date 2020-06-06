@@ -1,0 +1,54 @@
+.stats-overview {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  @media (max-width: 620px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .stats-action-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 30%;
+
+    @media (max-width: 620px) {
+      align-items: center;
+      margin-bottom: 15px;
+      width: 80%;
+    }
+
+    @media (min-width: 620px) {
+      @media (max-width: 880px) {
+        width: 40%;
+      }
+    }
+
+    .stats-heading {
+      margin-bottom: 10px;
+    }
+
+    .country-picker {
+      width: 100%;
+
+      @media (max-width: 620px) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  .counters {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    @media (max-width: 620px) {
+      align-items: center;
+      width: 100%;
+    }
+  }
+}

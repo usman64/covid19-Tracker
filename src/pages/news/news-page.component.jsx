@@ -6,7 +6,13 @@ import './news-page.styles.scss';
 const NewsPage = () => {
   return (
     <div className='news-page'>
-      <NewsCollection />
+      <div className='section'>
+        <div className='section-heading'>LATEST NEWS UPDATES</div>
+        <div className='section-content'>
+          <NewsCollection />
+        </div>
+        <div className='section-action'></div>
+      </div>
     </div>
   );
 };

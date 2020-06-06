@@ -5,7 +5,7 @@ import { NEWS } from '../../redux/news/news.data.js';
 
 import './news-collection.styles.scss';
 
-const NewsCollection = () => {
+const NewsCollection = ({ isHomepage }) => {
   return (
     <div className='news-collection'>
       <Grid
@@ -15,11 +15,19 @@ const NewsCollection = () => {
         alignItems='stretch'
         spacing={3}
       >
-        {NEWS.news.map((newsItem, key) => (
-          <Grid item xs={11} sm={5} md={4} lg={3} key={key}>
-            <NewsPreviewCard {...newsItem} />
-          </Grid>
-        ))}
+        {isHomepage
+          ? NEWS.news
+              .filter((newsItem, key) => key < 8)
+              .map((newsItem, key) => (
+                <Grid item xs={10} sm={5} md={4} lg={3} key={key}>
+                  <NewsPreviewCard {...newsItem} />
+                </Grid>
+              ))
+          : NEWS.news.map((newsItem, key) => (
+              <Grid item xs={10} sm={5} md={4} lg={3} key={key}>
+                <NewsPreviewCard {...newsItem} />
+              </Grid>
+            ))}
       </Grid>
     </div>
   );

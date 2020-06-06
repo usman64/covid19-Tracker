@@ -5,36 +5,23 @@ import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 
 import './home-page.styles.scss';
+import NewsCollection from '../../components/news-collection/news-collection.component';
+import SymptomCollection from '../../components/symptoms-collection/symptoms-collection.component';
+import StatsOverview from '../../components/stats-overview/stats-overview.component';
+import CustomButton from '../../components/custom-button/custom-button.component';
 
 const HomePage = () => {
   return (
     <div className='homepage'>
       <ImageSlider />
       <div className='section'>
-        <div className='section-heading'>
-          <Link className='heading' to='/stats'>
-            LATEST GLOBAL UPDATES
-          </Link>
-        </div>
+        {/* <div className='section-heading'></div> */}
         <div className='section-content'>
-          <div className='highlight-card'></div>
-          <div className='supporting-card'></div>
-          <div className='supporting-card'></div>
+          <StatsOverview />
         </div>
         <div className='section-action'>
           <Link className='heading' to='/stats'>
-            <Button
-              variant='contained'
-              style={{
-                fontSize: '18px',
-                backgroundColor: 'black',
-                color: 'white',
-                // borderRadius: '20px',
-                padding: '10px 50px',
-              }}
-            >
-              View More
-            </Button>
+            <CustomButton inverted> Learn More </CustomButton>
           </Link>
         </div>
       </div>
@@ -44,21 +31,12 @@ const HomePage = () => {
             COVID SYMPTOMS
           </Link>
         </div>
-        <div className='section-content'></div>
+        <div className='section-content'>
+          <SymptomCollection />
+        </div>
         <div className='section-action'>
           <Link className='heading' to='/what-is-covid'>
-            <Button
-              variant='contained'
-              style={{
-                fontSize: '18px',
-                backgroundColor: 'black',
-                color: 'white',
-                // borderRadius: '20px',
-                padding: '10px 50px',
-              }}
-            >
-              View More
-            </Button>
+            <CustomButton inverted> Learn More </CustomButton>
           </Link>
         </div>
       </div>
@@ -68,21 +46,12 @@ const HomePage = () => {
             NEWS HIGHLIGHTS
           </Link>
         </div>
-        <div className='section-content'></div>
+        <div className='section-content'>
+          <NewsCollection isHomepage />
+        </div>
         <div className='section-action'>
           <Link className='heading' to='/news'>
-            <Button
-              variant='contained'
-              style={{
-                fontSize: '18px',
-                backgroundColor: 'black',
-                color: 'white',
-                // borderRadius: '20px',
-                padding: '10px 50px',
-              }}
-            >
-              View More
-            </Button>
+            <CustomButton inverted> Learn More </CustomButton>
           </Link>
         </div>
       </div>

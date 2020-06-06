@@ -17,7 +17,11 @@ class Header extends React.Component {
       <div className='header'>
         <div className='responsive-menu'>
           <Link className='logo-container' to='/'>
-            {/* <Logo className='logo' /> */}Covid Tracker
+            <img
+              src={require('../../assets/icons8-coronavirus-64.png')}
+              alt='icon'
+            />
+            <span>Covid Tracker</span>
           </Link>
           <div className='hamburger-menu'>
             <HamburgerMenu

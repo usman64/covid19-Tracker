@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 const NewsPreviewCard = ({ title, images, excerpt, webUrl }) => {
   return (
     <Card>
-      <CardActionArea>
+      <CardActionArea href={webUrl}>
         <CardMedia
           component='img'
           alt='Covid19'
@@ -20,7 +20,7 @@ const NewsPreviewCard = ({ title, images, excerpt, webUrl }) => {
           }`}
           title={title}
         />
-        <CardContent>
+        <CardContent style={{ height: '200px', overflow: 'hidden' }}>
           <Typography gutterBottom variant='h5' component='h2'>
             {title}
           </Typography>
@@ -30,13 +30,18 @@ const NewsPreviewCard = ({ title, images, excerpt, webUrl }) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size='small' color='primary' href={webUrl}>
-          Go to Original
-        </Button>
         <Button
           size='small'
           color='primary'
-          //   onClick={() => history.push('/news/1')}
+          href={webUrl}
+          // style={{
+          //   border: '1px solid black',
+          //   color: 'black',
+          //   fontSize: '12px',
+          //   borderRadius: '0px',
+          //   margin: '10px',
+          //   marginLeft: 'auto',
+          // }}
         >
           Learn More
         </Button>
