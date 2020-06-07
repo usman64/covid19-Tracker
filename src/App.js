@@ -1,51 +1,57 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 
 import './App.css';
-import AlertHeader from './components/alert-header/alert-header.component';
 import Header from './components/header/header.component';
 import { Switch, Route } from 'react-router-dom';
 import Footer from './components/footer/footer.component';
 
-import HomePage from './pages/home/home-page.component';
+// import HomePage from './pages/home/home-page.component';
 import StatsPage from './pages/stats/stats-page.component';
 import NewsPage from './pages/news/news-page.component';
 import NotFound404 from './pages/not-found-404/not-found-404.component';
 import WhatIsCovidPage from './pages/what-is-covid/what-is-covid.component';
+import Spinner from './components/spinner/spinner.component';
+import { connect } from 'react-redux';
+import { getNews } from './redux/news/news.actions';
+import { getStatsByCountry } from './redux/stats/stats.actions';
+
+const HomePage = lazy(() => import('./pages/home/home-page.component'));
+// const StatsPage = lazy(() => import('./pages/stats/stats-page.component'));
+// const NewsPage = lazy(() => import('./pages/news/news-page.component'));
+// const WhatIsCovidPage = lazy(() =>
+//   import('./pages/what-is-covid/what-is-covid.component')
+// );
+// const NotFound404 = lazy(() =>
+//   import('./pages/not-found-404/not-found-404.component')
+// );
 
 class App extends React.Component {
-  // async componentWillMount() {
-  //   try {
-  //     const resp = await fetch(
-  //       'https://api.smartable.ai/coronavirus/news/global',
-  //       {
-  //         headers: {
-  //           'Subscription-Key': '0ce8a0c4bc8849028b6824aa3193b952',
-  //         },
-  //       }
-  //     );
-  //     const respJSON = await resp.json();
-  //     console.log(respJSON.news);
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // }
+  componentDidMount() {
+    this.props.dispatch(getNews());
+    this.props.dispatch(getStatsByCountry('PK'));
+  }
 
   render() {
     return (
       <div className='App'>
-        {/* <AlertHeader /> */}
         <Header />
-        <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route path='/stats' component={StatsPage} />
-          <Route path='/what-is-covid' component={WhatIsCovidPage} />
-          <Route path='/news' component={NewsPage} />
-          <Route path='*' component={NotFound404} />
-        </Switch>
-        <Footer className='App-footer' />
+        <div className='app-body'>
+          <Switch>
+            <Suspense fallback={<Spinner />}>
+              <Route exact path='/' component={HomePage} />
+              <Route path='/stats' component={StatsPage} />
+              <Route path='/what-is-covid' component={WhatIsCovidPage} />
+              <Route path='/news' component={NewsPage} />
+            </Suspense>
+            <Route path='/*' component={NotFound404} />
+          </Switch>
+        </div>
+        <div className='app-footer'>
+          <Footer />
+        </div>
       </div>
     );
   }
 }
 
-export default App;
+export default connect(null)(App);

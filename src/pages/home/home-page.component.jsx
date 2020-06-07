@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ImageSlider from '../../components/image-slider/image-slider.component';
 import { Link } from 'react-router-dom';
 
-import { Button } from '@material-ui/core';
+// import { Button } from '@material-ui/core';
 
 import './home-page.styles.scss';
 import NewsCollection from '../../components/news-collection/news-collection.component';
@@ -13,9 +13,10 @@ import CustomButton from '../../components/custom-button/custom-button.component
 const HomePage = () => {
   return (
     <div className='homepage'>
-      <ImageSlider />
+      <Suspense fallback={<div>Loading...</div>}>
+        <ImageSlider />
+      </Suspense>
       <div className='section'>
-        {/* <div className='section-heading'></div> */}
         <div className='section-content'>
           <StatsOverview />
         </div>

@@ -1,9 +1,10 @@
 .App {
-  text-align: center;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
 }
 
-.App-footer {
+.app-footer {
   justify-self: flex-end;
 }

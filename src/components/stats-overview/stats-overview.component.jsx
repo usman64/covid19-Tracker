@@ -4,25 +4,30 @@ import CounterCard from '../counter-card/counter-card.component';
 import './stats-overview.styles.scss';
 import CountryPicker from '../country-picker/country-picker.component';
 
-const STATS_OVERVIEW_DATA = [
-  {
-    tag: 'Confirmed',
-    value: 93233,
-    color: '#cf5840',
-  },
-  {
-    tag: 'Recovered',
-    value: 10233,
-    color: '#63b85c',
-  },
-  {
-    tag: 'Deaths',
-    value: 2530,
-    color: 'gray',
-  },
-];
+import { connect } from 'react-redux';
 
-const StatsOverview = () => {
+const StatsOverview = ({
+  currentCountry,
+  currentCountryStats,
+  isLoadingByCountry,
+}) => {
+  let STATS_OVERVIEW_DATA = [
+    {
+      tag: 'Confirmed',
+      value: currentCountryStats.totalConfirmedCases,
+      color: '#cf5840',
+    },
+    {
+      tag: 'Recovered',
+      value: currentCountryStats.totalRecoveredCases,
+      color: '#63b85c',
+    },
+    {
+      tag: 'Deaths',
+      value: currentCountryStats.totalDeaths,
+      color: 'gray',
+    },
+  ];
   return (
     <div className='stats-overview'>
       <div className='stats-action-area'>
@@ -42,4 +47,10 @@ const StatsOverview = () => {
   );
 };
 
-export default StatsOverview;
+const mapStateToProps = (state) => ({
+  currentCountry: state.stats.currentCountry,
+  currentCountryStats: state.stats.currentCountryStats,
+  isLoadingByCountry: state.stats.isLoadingByCountry,
+});
+
+export default connect(mapStateToProps)(StatsOverview);

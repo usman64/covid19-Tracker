@@ -3,17 +3,36 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { makeStyles } from '@material-ui/core/styles';
+import { connect } from 'react-redux';
+import { getStatsByCountry } from '../../redux/stats/stats.actions';
+import LanguageIcon from '@material-ui/icons/Language';
+
+const convertArrayToObject = (array, key) => {
+  const initialValue = {};
+  return array.reduce((obj, item) => {
+    return {
+      ...obj,
+      [item[key]]: item,
+    };
+  }, initialValue);
+};
 
 // ISO 3166-1 alpha-2
 // ⚠️ No support for IE 11
 function countryToFlag(isoCode) {
-  return typeof String.fromCodePoint !== 'undefined'
-    ? isoCode
+  return typeof String.fromCodePoint !== 'undefined' ? (
+    isoCode === 'global' ? (
+      <LanguageIcon />
+    ) : (
+      isoCode
         .toUpperCase()
         .replace(/./g, (char) =>
           String.fromCodePoint(char.charCodeAt(0) + 127397)
         )
-    : isoCode;
+    )
+  ) : (
+    isoCode
+  );
 }
 
 const useStyles = makeStyles({
@@ -26,9 +45,10 @@ const useStyles = makeStyles({
   },
 });
 
-export default function CountryPicker() {
+function CountryPicker({ getStatsByCountry, currentCountry }) {
   const classes = useStyles();
-
+  const countriesHashMap = convertArrayToObject(countries, 'code');
+  console.log(countriesHashMap[currentCountry]);
   return (
     <Autocomplete
       id='country-select-demo'
@@ -42,9 +62,12 @@ export default function CountryPicker() {
       renderOption={(option) => (
         <React.Fragment>
           <span>{countryToFlag(option.code)}</span>
-          {option.label} ({option.code}) +{option.phone}
+          {option.label} ({option.code})
         </React.Fragment>
       )}
+      defaultValue={countriesHashMap[currentCountry]}
+      value={countriesHashMap[currentCountry]}
+      onChange={(ev, val) => (val ? getStatsByCountry(val.code) : null)}
       renderInput={(params) => (
         <TextField
           {...params}
@@ -60,8 +83,19 @@ export default function CountryPicker() {
   );
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  getStatsByCountry: (countryCode) => dispatch(getStatsByCountry(countryCode)),
+});
+
+const mapStateToProps = (state) => ({
+  currentCountry: state.stats.currentCountry,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CountryPicker);
+
 // From https://bitbucket.org/atlassian/atlaskit-mk-2/raw/4ad0e56649c3e6c973e226b7efaeb28cb240ccb0/packages/core/select/src/data/countries.js
 const countries = [
+  { code: 'global', label: 'Global', phone: '376' },
   { code: 'AD', label: 'Andorra', phone: '376' },
   { code: 'AE', label: 'United Arab Emirates', phone: '971' },
   { code: 'AF', label: 'Afghanistan', phone: '93' },
