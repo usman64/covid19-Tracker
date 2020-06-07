@@ -41,6 +41,7 @@ const CounterCard = ({ tag, value, color }) => {
             delayedCall
           >
             <CountUp
+              delay={0.3}
               end={isCounterVisible ? value : 0}
               duration={0.7}
               separator=','
