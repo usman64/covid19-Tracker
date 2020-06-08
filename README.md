@@ -5,6 +5,8 @@ Covid Tracker is a web app imparting latest & live updates related to the corona
 
 Website: http://covid19-tracker-usman.surge.sh/
 
+## API Used: https://developer.smartable.ai/api-details
+
 ## Libraries used
   - ReactJS
   - Redux
