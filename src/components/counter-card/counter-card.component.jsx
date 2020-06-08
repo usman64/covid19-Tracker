@@ -55,7 +55,7 @@ const CounterCard = ({ tag, value, color, newValue, isLoading }) => {
             </VisibilitySensor>
           </div>
           <div className='counter-new-value' style={{ color: color }}>
-            (+{newValue})
+            {isLoading ? null : `+${newValue}`}
           </div>
         </div>
       </div>

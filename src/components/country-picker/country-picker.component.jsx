@@ -58,7 +58,9 @@ function CountryPicker({ getStatsByCountry, currentCountry }) {
       }}
       autoHighlight
       getOptionLabel={(option) =>
-        `${countryToFlag(option.code)} ${option.label}`
+        option.label === 'Global'
+          ? `${option.label}`
+          : `${countryToFlag(option.code)} ${option.label}`
       }
       renderOption={(option) => (
         <React.Fragment>
