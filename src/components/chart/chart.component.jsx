@@ -70,7 +70,7 @@ class CountryChart extends React.Component {
             ],
           }}
         />
-
+        <br />
         <Pie
           options={{
             title: {
@@ -101,6 +101,7 @@ class CountryChart extends React.Component {
             ],
           }}
         />
+        <br />
         {topMostAffectedCountries ? (
           <HorizontalBar
             options={{
