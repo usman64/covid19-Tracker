@@ -5,16 +5,19 @@ Covid Tracker is a web app imparting latest & live updates related to the corona
 
 Website: http://covid19-tracker-usman.surge.sh/
 
-## Languages/Libraries used
+## Libraries used
   - ReactJS
   - Redux
   - React-Redux
-  - Reselect
+  - redux-thunk
+  - Chartjs
+  - React-Chartjs 2
   - Node Sass
   - Material UI
   - React-router-dom
   - React-hamburger-menu
   - React-Slideshow-image
+  - moment
 
 
 ///////////////////////////////////////////////////////////////////
