@@ -51,14 +51,15 @@ function CountryPicker({ getStatsByCountry, currentCountry }) {
   console.log(countriesHashMap[currentCountry]);
   return (
     <Autocomplete
-      id='country-select-demo'
-      style={{ width: 300 }}
+      style={{ width: '100%' }}
       options={countries}
       classes={{
         option: classes.option,
       }}
       autoHighlight
-      getOptionLabel={(option) => option.label}
+      getOptionLabel={(option) =>
+        `${countryToFlag(option.code)} ${option.label}`
+      }
       renderOption={(option) => (
         <React.Fragment>
           <span>{countryToFlag(option.code)}</span>
@@ -67,7 +68,7 @@ function CountryPicker({ getStatsByCountry, currentCountry }) {
       )}
       defaultValue={countriesHashMap[currentCountry]}
       value={countriesHashMap[currentCountry]}
-      onChange={(ev, val) => (val ? getStatsByCountry(val.code) : null)}
+      onChange={(ev, val) => (val ? getStatsByCountry(val) : null)}
       renderInput={(params) => (
         <TextField
           {...params}
@@ -84,11 +85,11 @@ function CountryPicker({ getStatsByCountry, currentCountry }) {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  getStatsByCountry: (countryCode) => dispatch(getStatsByCountry(countryCode)),
+  getStatsByCountry: (country) => dispatch(getStatsByCountry(country)),
 });
 
 const mapStateToProps = (state) => ({
-  currentCountry: state.stats.currentCountry,
+  currentCountry: state.stats.currentCountry.code,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CountryPicker);

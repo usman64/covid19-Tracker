@@ -28,7 +28,7 @@ const HomePage = lazy(() => import('./pages/home/home-page.component'));
 class App extends React.Component {
   componentDidMount() {
     this.props.dispatch(getNews());
-    this.props.dispatch(getStatsByCountry('PK'));
+    this.props.dispatch(getStatsByCountry(this.props.currentCountry));
   }
 
   render() {
@@ -53,5 +53,8 @@ class App extends React.Component {
     );
   }
 }
+const mapStateToProps = (state) => ({
+  currentCountry: state.stats.currentCountry,
+});
 
-export default connect(null)(App);
+export default connect(mapStateToProps)(App);

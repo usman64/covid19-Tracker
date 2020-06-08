@@ -15,17 +15,22 @@ const StatsOverview = ({
     {
       tag: 'Confirmed',
       value: currentCountryStats.totalConfirmedCases,
+      newValue: currentCountryStats.newlyConfirmedCases,
       color: '#cf5840',
     },
     {
       tag: 'Recovered',
       value: currentCountryStats.totalRecoveredCases,
+      newValue: currentCountryStats.newlyRecoveredCases,
       color: '#63b85c',
+      ...currentCountryStats,
     },
     {
       tag: 'Deaths',
       value: currentCountryStats.totalDeaths,
+      newValue: currentCountryStats.newDeaths,
       color: 'gray',
+      ...currentCountryStats,
     },
   ];
   return (
@@ -40,7 +45,7 @@ const StatsOverview = ({
       </div>
       <div className='counters'>
         {STATS_OVERVIEW_DATA.map((statItem, key) => (
-          <CounterCard {...statItem} key={key} />
+          <CounterCard {...statItem} key={key} isLoading={isLoadingByCountry} />
         ))}
       </div>
     </div>
@@ -51,6 +56,7 @@ const mapStateToProps = (state) => ({
   currentCountry: state.stats.currentCountry,
   currentCountryStats: state.stats.currentCountryStats,
   isLoadingByCountry: state.stats.isLoadingByCountry,
+  errorByCountry: state.stats.errorByCountry,
 });
 
 export default connect(mapStateToProps)(StatsOverview);

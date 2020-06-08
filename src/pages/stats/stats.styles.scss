@@ -1,14 +1,22 @@
 .stats {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 
   .section {
     display: flex;
     flex-direction: column;
     margin: 20px 50px;
-    width: 80%;
+
+    @media (max-width: 780px) {
+      margin: 20px 10px;
+    }
+  }
+
+  .table-section {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 20px 20px 10px;
+    width: 30%;
 
     @media (max-width: 780px) {
       margin: 20px 10px;

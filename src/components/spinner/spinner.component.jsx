@@ -12,7 +12,7 @@ const Spinner = () => {
         justifyContent: 'center',
       }}
     >
-      <CircularProgress />
+      <CircularProgress color='default' />
     </div>
   );
 };

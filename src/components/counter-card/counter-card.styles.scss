@@ -20,11 +20,16 @@
       }
     }
   }
-  .counter-value {
+
+  .counter-values {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: 80%;
+  }
+
+  .counter-value {
     font-size: 30px;
     font-weight: bold;
 
@@ -37,5 +42,11 @@
         font-size: 30px;
       }
     }
+  }
+
+  .counter-new-value {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
   }
 }

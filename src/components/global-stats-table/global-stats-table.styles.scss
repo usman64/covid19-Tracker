@@ -1,0 +1,25 @@
+.table {
+  .table-header {
+    background-color: black;
+    color: white;
+    padding: 20px;
+
+    .table-header-item {
+      padding: 10px;
+    }
+  }
+
+  .table-content {
+    border: 1px solid gray;
+    text-align: justify;
+    .table-content-item {
+      padding: 10px;
+      margin-left: 10px;
+      font-weight: 300;
+      .new {
+        // font-weight: bold;
+        color: green;
+      }
+    }
+  }
+}
