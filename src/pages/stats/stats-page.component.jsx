@@ -3,7 +3,7 @@ import StatsOverview from '../../components/stats-overview/stats-overview.compon
 import { connect } from 'react-redux';
 import './stats.styles.scss';
 import GlobalStatsTable from '../../components/global-stats-table/global-stats-table.component';
-import { Grid, Container } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import CountryChart from '../../components/chart/chart.component';
 import {
   getAllStats,
@@ -42,9 +42,7 @@ class StatsPage extends React.Component {
         </div>
         <div className='section'>
           <div className='section-content'>
-            <Container maxWidth='lg'>
-              <CountryChart />
-            </Container>
+            <CountryChart />
           </div>
         </div>
         <div className='section'>
