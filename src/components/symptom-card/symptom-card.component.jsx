@@ -6,7 +6,11 @@ import './symptom-card.styles.scss';
 const SymptomCard = ({ imageUrl, title }) => {
   return (
     <Paper
-      style={{ height: '150px', padding: '30px', borderRadius: '20px' }}
+      style={{
+        height: '150px',
+        padding: '30px',
+        borderRadius: '20px',
+      }}
       elevation={3}
       square
     >

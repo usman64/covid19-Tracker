@@ -56,18 +56,18 @@ class GlobalStatsTable extends Component {
                         location.isoCode ? countryToFlag(location.isoCode) : ''
                       } ${location.countryOrRegion}`}</Td>
                       <Td className='table-content-item'>
-                        {totalConfirmedCases}{' '}
+                        {totalConfirmedCases.toLocaleString()}{' '}
                         <span className='new'>
-                          {`(+${newlyConfirmedCases})`}
+                          {`(+${newlyConfirmedCases.toLocaleString()})`}
                         </span>
                       </Td>
                       <Td className='table-content-item'>
-                        {totalRecoveredCases}{' '}
-                        <span className='new'>{`(+${newlyRecoveredCases})`}</span>
+                        {totalRecoveredCases.toLocaleString()}{' '}
+                        <span className='new'>{`(+${newlyRecoveredCases.toLocaleString()})`}</span>
                       </Td>
                       <Td className='table-content-item'>
-                        {totalDeaths}{' '}
-                        <span className='new'>{`(+${newDeaths})`}</span>
+                        {totalDeaths.toLocaleString()}{' '}
+                        <span className='new'>{`(+${newDeaths.toLocaleString()})`}</span>
                       </Td>
                     </Tr>
                   )
