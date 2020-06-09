@@ -1,5 +1,6 @@
 import React from 'react';
 import ResponsiveEmbed from 'react-responsive-embed';
+import { Container } from '@material-ui/core';
 import './what-is-covid.styles.scss';
 import SymptomCollection from '../../components/symptoms-collection/symptoms-collection.component';
 
@@ -18,10 +19,14 @@ const WhatIsCovidPage = () => {
             who is sick with the illness (through coughing or sneezing) or
             contaminated hands.
           </div>
-          <ResponsiveEmbed
-            src='https://www.youtube.com/embed/mOV1aBVYKGA'
-            allowfullscreen
-          />
+          <Container maxWidth='md'>
+            <ResponsiveEmbed
+              src='https://www.youtube.com/embed/mOV1aBVYKGA'
+              allowfullscreen
+              ratio='16:9'
+              allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+            />
+          </Container>
         </div>
         <div className='section-action'></div>
       </div>

@@ -3,7 +3,7 @@ import StatsOverview from '../../components/stats-overview/stats-overview.compon
 import { connect } from 'react-redux';
 import './stats.styles.scss';
 import GlobalStatsTable from '../../components/global-stats-table/global-stats-table.component';
-import { Grid } from '@material-ui/core';
+import { Grid, Container } from '@material-ui/core';
 import CountryChart from '../../components/chart/chart.component';
 import {
   getAllStats,
@@ -33,7 +33,7 @@ class StatsPage extends React.Component {
                 onClose={() => this.props.dispatch(resetAlertNoDataAvailable())}
               >
                 <Alert severity='warning'>
-                  Data for the selected country not available{' '}
+                  Data for the selected country not available!{' '}
                 </Alert>
               </Snackbar>
             ) : null}
@@ -42,7 +42,9 @@ class StatsPage extends React.Component {
         </div>
         <div className='section'>
           <div className='section-content'>
-            <CountryChart />
+            <Container maxWidth='lg'>
+              <CountryChart />
+            </Container>
           </div>
         </div>
         <div className='section'>
